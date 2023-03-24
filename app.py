@@ -4,13 +4,11 @@ users = []
 
 @app.route('/', methods=["GET", "POST"])
 def home():
-    x = 0
     if request.method == "POST":
-        x = x + 1
         print(request.form)
         users.append(
             [
-            x,
+            len(users)+1,
             request.form.get("email"),
             request.form.get("password"),   
             request.form.get("Radios"),
